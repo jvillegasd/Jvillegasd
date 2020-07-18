@@ -1,3 +1,5 @@
+"use strict";
+
 let axios = require("axios");
 let querystring = require("querystring");
 
