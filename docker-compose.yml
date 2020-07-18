@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  now_playing:
+    container_name: now_playing_pugjs
+    build: ./
+    restart: always
+    env_file: .env
+    ports:
+      - ${NODE_PORT}:${NODE_PORT}
+    volumes:
+      - ./:/app
+      - node_modules:/app/node_modules
+    # environment: 
+    #   VIRTUAL_HOST: ${VIRTUAL_HOST}
+    #   LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+    #   LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+    #   NODE_ENV: production
+    # expose:
+    #   - ${NODE_PORT}
+
+volumes:
+  node_modules:
+
+# networks:
+#   default:
+#     external:
+#       name: nginx-proxy

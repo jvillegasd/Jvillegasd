@@ -1,0 +1,17 @@
+{
+  "name": "pugjs_spotify_now_playing",
+  "version": "1.0.0",
+  "description": "Spotify current song using SSR with PugJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Johnny Villegas",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "pug": "^3.0.0"
+  }
+}
