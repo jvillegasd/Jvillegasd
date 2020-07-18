@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
 #card {
+  margin-top: 10px !important;
   font-family: "Questrial", sans-serif;
   position: relative;
   margin: auto;

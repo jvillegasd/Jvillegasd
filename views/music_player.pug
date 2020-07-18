@@ -6,16 +6,18 @@ html
     style
       include ../public/css/music_player.css
   body
-    div(id = "card" style = "background-image: url(" + image_link + ");")
-      div(id = "image_block")
-        a(href = spotify_link)
-          div(id = "spotify_icon")
-            include ../public/images/spotify.svg
-      div(id = "info")
-        div(id = "progress_bar")
-          div(id = "current_time") #{progress}
-          div(id = "total_time") #{duration}
-          div(id = "fill" style = "width: " + progress_percentage + "%;")
-        div(id = "artist")
-          h2(id = "song_name") #{title}
-          h3(id = "artist_name") #{artist}
+    svg(width = "340" height = "340" xmlns = "http://www.w3.org/2000/svg")
+      foreignObject(x = "0" y = "0" width = "340" height = "340")
+        div(id = "card" style = "background-image: url(" + image_link + ");")
+          div(id = "image_block")
+            a(href = spotify_link)
+              div(id = "spotify_icon")
+                include ../public/images/spotify.svg
+          div(id = "info")
+            div(id = "progress_bar")
+              div(id = "current_time") #{progress}
+              div(id = "total_time") #{duration}
+              div(id = "fill" style = "width: " + progress_percentage + "%;")
+            div(id = "artist")
+              h2(id = "song_name") #{title}
+              h3(id = "artist_name") #{artist}
