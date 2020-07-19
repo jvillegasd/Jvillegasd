@@ -2,7 +2,7 @@
   <img src="https://spotify.linkrsplayground.duckdns.org" width="340" height="340" alt="Now Playing">
 </a>
 
-<div id = "some_issues" style="display:none;">
+<!-- <div id = "some_issues">
   <p>It is a little list of problems you can face while implementing this kind of stuff</p>
   <ul id = "problem_list">
     <li>
@@ -14,4 +14,4 @@
       https://stackoverflow.com/questions/13848039/svg-foreignobject-contents-do-not-display-unless-plain-text
     </li>
   </ul>
-</div>
+</div> -->
