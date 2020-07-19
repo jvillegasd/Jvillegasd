@@ -33,11 +33,11 @@ app.get("/", async (request, response) => {
 
   // Get spotify information
   let current_song = await spotify.nowPlaying();
-  let last_song = await spotify.recentlyPlayed();
+  
+  let spotify_data = current_song || await spotify.recentlyPlayed();
 
   // If spotify returns something...
-  if (current_song || last_song) {
-    let spotify_data = current_song || last_song;
+  if (spotify_data) {
 
     let duration_min_sec = millisToMinutesAndSeconds(
       spotify_data.duration_ms
