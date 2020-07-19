@@ -11,18 +11,6 @@ services:
     volumes:
       - ./:/app
       - node_modules:/app/node_modules
-    # environment: 
-    #   VIRTUAL_HOST: ${VIRTUAL_HOST}
-    #   LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
-    #   LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
-    #   NODE_ENV: development
-    # expose:
-    #   - ${NODE_PORT}
 
 volumes:
   node_modules:
-
-# networks:
-#   default:
-#     external:
-#       name: nginx-proxy
