@@ -62,6 +62,7 @@ app.get("/", async (request, response) => {
 
   if (opened === undefined) {
     response.setHeader("content-type", "image/svg+xml; charset=utf-8");
+    response.setHeader("Content-Type", "no-cache, max-age=0");
     response.render("music_player", {
       image_link,
       progress,
