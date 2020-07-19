@@ -5,6 +5,7 @@ const body_parser = require("body-parser");
 const path = require("path");
 const favicon = require("serve-favicon");
 const spotify = require("./spotify");
+const fs = require("fs");
 
 const app = express();
 
@@ -19,7 +20,7 @@ app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 // Client stuff
 app.get("/", async (request, response) => {
   // Init important variables with default values
-  let image_link = "/public/images/no_song.png";
+  let image_link = defaultImageToBase64("./public/images/no_song.png");
   let progress = "3:00";
   let duration = "3:00";
   let progress_percentage = 100;
@@ -46,7 +47,7 @@ app.get("/", async (request, response) => {
     );
     artist = getArtists(spotify_data.artists);
     title = spotify_data.name;
-    image_link = spotify_data.album.images[1].url;
+    image_link = spotify_data.album.image;
     duration = duration_min_sec;
     progress = progress_min_sec;
     progress_percentage = Math.floor(
@@ -99,4 +100,9 @@ function getArtists(array) {
   }
   if (artists.length) return artists.slice(0, -2);
   else return "Some artist";
+}
+
+function defaultImageToBase64(image_path) {
+  let data_uri = "data:image/png;base64," + fs.readFileSync("./public/images/no_song.png", 'base64');
+  return data_uri;
 }

@@ -9,8 +9,6 @@ const {
   SPOTIFY_REFRESH_TOKEN: refresh_token
 } = process.env;
 
-const BASIC_CODE = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
-const AUTH_TOKEN = `Basic ${BASIC_CODE}`;
 const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player/currently-playing";
 const RECENTLY_PLAYED_ENDPOINT = "https://api.spotify.com/v1/me/player/recently-played";
 const GET_TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
@@ -67,7 +65,7 @@ module.exports.nowPlaying = async () => {
           album_type: album.album_type,
           artists: album.artists,
           external_urls: album.external_urls,
-          images: album.images,
+          image: await imageToBase64(album.images[1].url),
           name: album.name,
           release_date: album.release_date
         },
@@ -102,13 +100,13 @@ module.exports.recentlyPlayed = async () => {
         artists,
         external_urls
       } = items[0].track;
-
+      
       return {
         album: {
           album_type: album.album_type,
           artists: album.artists,
           external_urls: album.external_urls,
-          images: album.images,
+          image: await imageToBase64(album.images[1].url),
           name: album.name,
           release_date: album.release_date
         },
@@ -122,5 +120,16 @@ module.exports.recentlyPlayed = async () => {
   } catch (error) {
     console.log("Spotify error", "retrieving recently played", error);
     return false;
+  }
+}
+
+async function imageToBase64(image_link) {
+  try {
+    let response = await axios(image_link, { responseType: "arraybuffer" });
+
+    return "data:image/png;base64," + Buffer.from(response.data, "binary").toString("base64");
+  } catch (error) {
+    console.log("error converting spotify cover to base 64", error);
+    return image_link;
   }
 }
