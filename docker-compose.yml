@@ -15,7 +15,7 @@ services:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
-      NODE_ENV: production
+      NODE_ENV: development
     expose:
       - ${NODE_PORT}
 
