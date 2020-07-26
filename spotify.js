@@ -49,7 +49,8 @@ module.exports.nowPlaying = async () => {
     if (response.status === 200) {
       const {
         progress_ms,
-        item
+        item,
+        is_playing
       } = response.data;
 
       const {
@@ -73,7 +74,8 @@ module.exports.nowPlaying = async () => {
         progress_ms,
         name,
         artists,
-        external_urls
+        external_urls,
+        is_playing
       };
     } else return false;
   } catch (error) {

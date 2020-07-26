@@ -27,6 +27,8 @@ app.get("/", async (request, response) => {
   let title = "Fetching data...";
   let artist = "Someone";
   let spotify_link = "#";
+  let paused = "paused";
+  let animation_delay = "";
 
   // Get "Redirect to Spotify" query param
   let opened = request.query.opened;
@@ -38,22 +40,17 @@ app.get("/", async (request, response) => {
 
   // If spotify returns something...
   if (spotify_data) {
-
-    let duration_min_sec = millisToMinutesAndSeconds(
-      spotify_data.duration_ms
-    );
-    let progress_min_sec = millisToMinutesAndSeconds(
-      spotify_data.progress_ms
-    );
     artist = getArtists(spotify_data.artists);
     title = spotify_data.name;
     image_link = spotify_data.album.image;
-    duration = duration_min_sec;
-    progress = progress_min_sec;
+    duration = spotify_data.duration_ms;
+    progress = spotify_data.progress_ms;
     progress_percentage = Math.floor(
       (spotify_data.progress_ms / spotify_data.duration_ms) * 100
     );
     spotify_link = spotify_data.external_urls.spotify;
+    paused = (spotify_data.is_playing) ? "" : "paused";
+    animation_delay = `animation: progress ${duration}ms linear; animation-delay: -${progress}ms;`;
 
     // If someone comes from Github, redirect them to Spotify
     if (opened !== undefined) {
@@ -66,12 +63,12 @@ app.get("/", async (request, response) => {
     response.setHeader("cache-control", "no-cache, max-age=0");
     response.render("music_player", {
       image_link,
-      progress,
-      duration,
       progress_percentage,
       title,
       artist,
-      spotify_link
+      spotify_link,
+      paused,
+      animation_delay
     });
   }
 });
@@ -86,13 +83,6 @@ app.listen(process.env.NODE_PORT, () => {
 });
 
 // Some utils functions
-
-function millisToMinutesAndSeconds(millis) {
-  let minutes = Math.floor(millis / 60000);
-  let seconds = ((millis % 60000) / 1000).toFixed(0);
-  return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-}
-
 function getArtists(array) {
   let artists = "";
   for (let artist of array) {

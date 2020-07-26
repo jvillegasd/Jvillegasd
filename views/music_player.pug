@@ -9,19 +9,19 @@ svg(width = "340" height = "340" fill="none" xmlns = "http://www.w3.org/2000/svg
 
           /* Normal CSS stuff */
           margin-top: 10px !important;
-          font-family:  sans-serif;
+          font-family:  Helvetica, Arial, sans-serif;
           position: relative;
           margin: auto;
           width: 300px;
           height: 300px;
           overflow: hidden;
           background-size: 300px;
-          box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.6);
-          border-radius: 10px;
+          box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+          border-radius: 13px;
         }
 
         #spotify_icon {
-          fill: rgba(57, 58, 16, 0.87);
+          fill: rgba(135, 163, 48, 0.9);
           position: absolute;
           right: 10px;
           top: 10px;
@@ -31,72 +31,66 @@ svg(width = "340" height = "340" fill="none" xmlns = "http://www.w3.org/2000/svg
         }
 
         #spotify_icon:hover {
-          fill: rgba(57, 58, 16, 1);
+          fill: rgba(135, 163, 48, 1);
           transition: all .5s;
           transform: translateY(-2px);
         }
 
         #info {
-          height: 90px;
-          width: 100%;
+          height: 100px;
+          width: 92%;
           position: absolute;
-          bottom: 0;
-          left: 0;
-          background: rgba(255, 255, 255, 0.87);
+          bottom: 4%;
+          left: 4%;
+          background: rgba(255, 255, 255, 0.5);
+          backdrop-filter: blur(2px);
           transition: all .5s;
+          border-radius: 13px; 
+        }
+
+        .paused {
+          animation-play-state: paused !important;
         }
 
         #progress_bar {
           height: 5px;
-          width: 73%;
+          width: 90%;
           margin: 6% auto;
-          background-color: #c0cfb2;
+          background-color: #e1e4e8;
           border-radius: 10px;
+          position: relative;
         }
 
-        #fill {
-          background-color: #8ba989;
-          height: 0.3rem;
-          border-radius: 2px;
+        #progress {
+          background-color: #24292e;
+          height: 5px;
+          border-radius: 10px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          transform-origin: left center;
         }
 
         #artist {
           text-align: center;
-          margin-top: -3px;
+          margin-top: 14px;
         }
-
-        #current_time,
-        #total_time {
-          font-size: 10px;
-          position: absolute;
-          margin-top: -2px;
-        }
-
-        #current_time {
-          left: 15px;
-        }
-
-        #total_time {
-          right: 15px;
-        }
-
+        
         #artist_name,
         #song_name {
-          text-transform: uppercase;
           margin: 0;
         }
 
         #song_name {
-          font-size: 0.9em;
-          letter-spacing: 1.6px;
-          color: #49654d;
+          font-size: 1em;
+          color: black;
         }
 
         #artist_name {
-          font-size: 0.75em;
-          letter-spacing: 1.4px;
+          font-size: 0.9em;
           margin-top: 5px;
-          color: #8ba989;
+          color: #24292e;
         }
 
         @keyframes appear {
@@ -109,16 +103,23 @@ svg(width = "340" height = "340" fill="none" xmlns = "http://www.w3.org/2000/svg
             transform: scale(1);
           }
         }
+
+        @keyframes progress {
+          from {
+            transform: scaleX(0)
+          }
+          to {
+            transform: scaleX(1)
+          }
+        }
       div(id = "card" style = "background-image: url(" + image_link + ");")
         div(id = "image_block")
           a(href = spotify_link)
             div(id = "spotify_icon")
               include ../public/images/spotify.svg
         div(id = "info")
-          div(id = "progress_bar")
-            div(id = "current_time") #{progress}
-            div(id = "total_time") #{duration}
-            div(id = "fill" style = "width: " + progress_percentage + "%;")
           div(id = "artist")
             h2(id = "song_name") #{title}
             h3(id = "artist_name") #{artist}
+          div(id = "progress_bar")
+            div(id = "progress" style = "" + animation_delay + "" class = "" + paused + "")

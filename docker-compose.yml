@@ -1,8 +1,8 @@
 version: '3.7'
 
 services:
-  now_playing:
-    container_name: now_playing_pugjs
+  now_playing_dev:
+    container_name: now_playing_dev
     build: ./
     restart: always
     env_file: .env
