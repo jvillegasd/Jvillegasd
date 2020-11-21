@@ -1,52 +1,63 @@
-svg(width = "340" height = "340" fill="none" xmlns = "http://www.w3.org/2000/svg")
-  foreignObject(x = "0" y = "0" width = "340" height = "340")
+svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg")
+  foreignObject(x = "0" y = "0" width = "341" height = "571")
     div(xmlns = "http://www.w3.org/1999/xhtml")
       style.
-        #card {
-          /* Animation stuff */
-          opacity: 0;
-          animation: appear 300ms ease-out forwards;
 
-          /* Normal CSS stuff */
-          margin-top: 10px !important;
-          font-family:  -apple-system, "BlinkMacSystemFont", "Segoe UI",  Helvetica, Arial, sans-serif;
+        #player {
+          width: 341px;
+          height: 571px;
+          background-color: #14213D;
+          border-radius: 67px;
           position: relative;
+        }
+
+        #timeline_animated{
+          width: 294px;
+          height: 294px;
           margin: auto;
-          width: 300px;
-          height: 300px;
-          overflow: hidden;
-          background-size: 300px;
-          box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
-          border-radius: 13px;
+          padding-right: 5px;
         }
 
-        #spotify_icon {
-          fill: rgba(135, 163, 48, 0.9);
+        #ta_right {
+          background-color: #CCD5C3;
+          width: 294px;
+          height: 294px;
+          opacity: 1;
+          border-radius: 50%;
           position: absolute;
-          right: 10px;
-          top: 10px;
-          width: 32px;
-          height: 32px;
-          transition: all .5s;
+          
+          clip: rect(0px, 147px, 294px, 0px);
         }
 
-        #spotify_icon:hover {
-          fill: rgba(135, 163, 48, 1);
-          transition: all .5s;
-          transform: translateY(-2px);
-        }
-
-        #info {
-          height: 100px;
-          width: 92%;
+        #ta_left {
+          background-color: #CCD5C3;
+          width: 294px;
+          height: 294px;
+          opacity: 1;
+          border-radius: 50%;
           position: absolute;
-          bottom: 4%;
-          left: 4%;
-          background: rgba(255, 255, 255, 0.7);
-          backdrop-filter: blur(2px);
-          -webkit-backdrop-filter: blur(2px);
-          transition: all .5s;
-          border-radius: 13px; 
+          
+          clip: rect(0px, 294px, 294px, 147px);
+        }
+
+        #ta_inner {
+          background-color: #14213D;
+          width: 250px;
+          height: 250px;
+          opacity: 1;
+          border-radius: 50%;
+          position: absolute;
+          margin: 20px 0 0 20px;
+          z-index: 6;
+        }
+
+        #song_info {
+          width: 341px;
+          height: 171px;
+          background-color: #CBD4C2;
+          border-radius: 60px 60px 67px 67px;
+          position: absolute;
+          bottom: 0px;
         }
 
         .paused {
@@ -74,27 +85,6 @@ svg(width = "340" height = "340" fill="none" xmlns = "http://www.w3.org/2000/svg
           transform-origin: left center;
         }
 
-        #artist {
-          text-align: center;
-          margin-top: 14px;
-        }
-        
-        #artist_name,
-        #song_name {
-          margin: 0;
-        }
-
-        #song_name {
-          font-size: 1em;
-          color: black;
-        }
-
-        #artist_name {
-          font-size: 0.8em;
-          margin-top: 1px;
-          color: #24292e;
-        }
-
         @keyframes appear {
           from {
             opacity: 0;
@@ -114,14 +104,11 @@ svg(width = "340" height = "340" fill="none" xmlns = "http://www.w3.org/2000/svg
             transform: scaleX(1);
           }
         }
-      div(id = "card" style = "background-image: url(" + image_link + ");")
-        div(id = "image_block")
-          a(href = spotify_link)
-            div(id = "spotify_icon")
-              include ../public/images/spotify.svg
-        div(id = "info")
-          div(id = "artist")
-            h2(id = "song_name") #{title}
-            h3(id = "artist_name") #{artist}
-          div(id = "progress_bar")
-            div(id = "progress" style = "" + animation_delay + "" class = "" + paused + "")
+      
+      div(id="player")
+        div(id="timeline_animated")
+          div(id="ta_inner")
+          div(id="ta_right")
+          div(id="ta_left")
+          
+        div(id="song_info")
