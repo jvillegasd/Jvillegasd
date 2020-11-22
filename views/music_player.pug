@@ -17,7 +17,23 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
         }
 
         #timeline_base {
+          width: 290px;
+          height: 290px;
+          margin: auto;
+          margin-left: 23px;
+          background-color: #E5E5E5;
+          border-radius: 50%;
+        }
 
+        #tb_inner {
+          background-color: #14213D;
+          width: 284px;
+          height: 284px;
+          border-radius: 50%;
+          position: absolute;
+          top: 50px;
+          left: 26px;
+          z-index: 10;
         }
 
         #timeline_animated{
@@ -34,8 +50,7 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           opacity: 1;
           border-radius: 50%;
           position: absolute;
-          
-          clip: rect(0px, 147px, 294px, 0px); /*first param is Top - modify it*/
+          clip: rect(294px, 147px, 294px, 0px); /*first param is Top - modify it*/
         }
 
         #ta_right {
@@ -45,7 +60,6 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           opacity: 1;
           border-radius: 50%;
           position: absolute;
-          
           clip: rect(0px, 294px, 294px, 147px); /*third param is Bottom - modify it*/
         }
 
@@ -117,6 +131,7 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
       div(id="player")
         div(id="timeline")
           div(id="timeline_base")
+            div(id="tb_inner")
           div(id="timeline_animated")
             div(id="ta_inner")
             div(id="ta_left")
