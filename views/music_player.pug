@@ -8,7 +8,12 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           height: 571px;
           background-color: #14213D;
           border-radius: 67px;
+          opacity: 0.8;
           position: relative;
+        }
+
+        #timeline {
+
         }
 
         #timeline_animated{
@@ -16,17 +21,6 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           height: 294px;
           margin: auto;
           padding-right: 5px;
-        }
-
-        #ta_right {
-          background-color: #CCD5C3;
-          width: 294px;
-          height: 294px;
-          opacity: 1;
-          border-radius: 50%;
-          position: absolute;
-          
-          clip: rect(0px, 147px, 294px, 0px);
         }
 
         #ta_left {
@@ -37,18 +31,30 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           border-radius: 50%;
           position: absolute;
           
-          clip: rect(0px, 294px, 294px, 147px);
+          clip: rect(0px, 147px, 294px, 0px); /*first param is Top - modify it*/
+        }
+
+        #ta_right {
+          background-color: #CCD5C3;
+          width: 294px;
+          height: 294px;
+          opacity: 1;
+          border-radius: 50%;
+          position: absolute;
+          
+          clip: rect(0px, 294px, 294px, 147px); /*third param is Bottom - modify it*/
         }
 
         #ta_inner {
           background-color: #14213D;
-          width: 250px;
-          height: 250px;
-          opacity: 1;
+          width: 277px;
+          height: 277px;
           border-radius: 50%;
+          margin: auto;
           position: absolute;
-          margin: 20px 0 0 20px;
-          z-index: 6;
+          top: 8px;
+          left: 30px;
+          z-index: 10;
         }
 
         #song_info {
@@ -106,9 +112,10 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
         }
       
       div(id="player")
+        div(id="timeline")
         div(id="timeline_animated")
           div(id="ta_inner")
-          div(id="ta_right")
           div(id="ta_left")
+          div(id="ta_right")
           
         div(id="song_info")
