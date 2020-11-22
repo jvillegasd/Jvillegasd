@@ -40,7 +40,9 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           width: 294px;
           height: 294px;
           margin: auto;
-          padding-right: 5px;
+          margin-left: 22px;
+          position: absolute;
+          display: none;
         }
 
         #ta_left {
@@ -50,7 +52,7 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           opacity: 1;
           border-radius: 50%;
           position: absolute;
-          clip: rect(294px, 147px, 294px, 0px); /*first param is Top - modify it*/
+          clip: rect(0px, 147px, 294px, 0px); /*first param is Top - modify it*/
         }
 
         #ta_right {
@@ -69,8 +71,8 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           height: 276px;
           border-radius: 50%;
           position: absolute;
-          top: 56px;
-          left: 30px;
+          top: 9px;
+          left: 9px;
           z-index: 10;
         }
 
@@ -130,11 +132,11 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
       
       div(id="player")
         div(id="timeline")
-          div(id="timeline_base")
-            div(id="tb_inner")
           div(id="timeline_animated")
             div(id="ta_inner")
             div(id="ta_left")
             div(id="ta_right")
+          div(id="timeline_base")
+            div(id="tb_inner")
           
         div(id="song_info")
