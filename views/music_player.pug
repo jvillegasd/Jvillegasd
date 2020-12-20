@@ -11,69 +11,15 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           opacity: 0.8;
           position: relative;
         }
-
-        #timeline {
-          padding-top: 47px;
-        }
-
+        
         #timeline_base {
+          position: absolute; 
+          border: 2px solid rgba(229, 229, 229, 1);
           width: 290px;
           height: 290px;
-          margin: auto;
-          margin-left: 23px;
-          background-color: #E5E5E5;
+          margin-top: 47px;
+          margin-left: 21px;
           border-radius: 50%;
-        }
-
-        #tb_inner {
-          background-color: #14213D;
-          width: 284px;
-          height: 284px;
-          border-radius: 50%;
-          position: absolute;
-          top: 50px;
-          left: 26px;
-          z-index: 10;
-        }
-
-        #timeline_animated{
-          width: 294px;
-          height: 294px;
-          margin: auto;
-          margin-left: 22px;
-          position: absolute;
-          display: none;
-        }
-
-        #ta_left {
-          background-color: #CCD5C3;
-          width: 294px;
-          height: 294px;
-          opacity: 1;
-          border-radius: 50%;
-          position: absolute;
-          clip: rect(0px, 147px, 294px, 0px); /*first param is Top - modify it*/
-        }
-
-        #ta_right {
-          background-color: #CCD5C3;
-          width: 294px;
-          height: 294px;
-          opacity: 1;
-          border-radius: 50%;
-          position: absolute;
-          clip: rect(0px, 294px, 294px, 147px); /*third param is Bottom - modify it*/
-        }
-
-        #ta_inner {
-          background-color: #14213D;
-          width: 276px;
-          height: 276px;
-          border-radius: 50%;
-          position: absolute;
-          top: 9px;
-          left: 9px;
-          z-index: 10;
         }
 
         #song_info {
@@ -131,12 +77,6 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
         }
       
       div(id="player")
-        div(id="timeline")
-          div(id="timeline_animated")
-            div(id="ta_inner")
-            div(id="ta_left")
-            div(id="ta_right")
-          div(id="timeline_base")
-            div(id="tb_inner")
+        div(id="timeline_base")
           
         div(id="song_info")
