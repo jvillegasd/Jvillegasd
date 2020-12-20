@@ -4,6 +4,10 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
       style.
 
         #player {
+          /* Animation CSS properties */
+          animation: appear 300ms ease-out forwards;
+
+          /* Component CSS properties */
           width: 341px;
           height: 571px;
           background-color: #14213D;
@@ -21,6 +25,21 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           margin-left: 21px;
           border-radius: 50%;
         }
+        
+        #svg_embedder {
+          width: 341px;
+          height: 571px;
+        }
+
+        #timeline_animated {
+          position: absolute !important;
+          left: -80px;
+          top: -30px;
+          transform: rotate(-90deg);
+          stroke-dasharray: 917; /* (2PI * 146px) */
+          stroke-dashoffset: 917;
+          animation: progress 10s linear forwards;
+        }
 
         #song_info {
           width: 341px;
@@ -35,48 +54,28 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           animation-play-state: paused !important;
         }
 
-        #progress_bar {
-          height: 5px;
-          width: 90%;
-          margin: 4% auto;
-          background-color: #e1e4e8;
-          border-radius: 10px;
-          position: relative;
-          overflow: hidden;
-        }
-
-        #progress {
-          background-color: #24292e;
-          height: 5px;
-          border-radius: 10px;
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          transform-origin: left center;
-        }
-
         @keyframes appear {
           from {
             opacity: 0;
             transform: scale(0.6);
           }
           to {
-            opacity: 1;
+            opacity: 0.8;
             transform: scale(1);
           }
         }
 
         @keyframes progress {
-          from {
-            transform: scaleX(0);
-          }
           to {
-            transform: scaleX(1);
+            stroke-dashoffset: 0;
           }
         }
       
       div(id="player")
         div(id="timeline_base")
-          
+        div(id="svg_embedder" xmlns="http://www.w3.org/1999/xhtml")
+          svg(id="timeline_animated" height="300", width="500" xmlns = "http://www.w3.org/2000/svg")
+            circle(cx="176", cy="150", r="146", stroke="#CBD4C2", stroke-width="9", fill="none")
+        div()
+
         div(id="song_info")
