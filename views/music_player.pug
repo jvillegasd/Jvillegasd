@@ -39,16 +39,21 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           top: -30px;
           stroke-dasharray: 917; /* (2PI * 146px) */
           stroke-dashoffset: 917;
-          animation: progress 10s linear forwards;
         }
 
-        #song_img {
+        #img_cropper {
           position: absolute;
-          border-radius: 50%;
           top: 73px;
           left: 50px;
           width: 240px;
           height: 240px;
+          overflow: hidden;
+          border-radius: 50%;
+        }
+
+        #song_img {
+          height: 300px;
+          width: 300px;
         }
 
         #song_info {
@@ -103,7 +108,8 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
         }
       
       div(id="player")
-        div(id="song_img" style = "background-image: url(" + image_link + ");")
+        div(id="img_cropper")
+          div(id="song_img" style = "background-image: url(" + image_link + ");")
         div(id="timeline_base")
         div(id="svg_embedder" xmlns="http://www.w3.org/1999/xhtml")
           svg(id="timeline_animated" height="300", width="500" xmlns = "http://www.w3.org/2000/svg" style = "" + animation_delay + "" class = "" + paused + "")
