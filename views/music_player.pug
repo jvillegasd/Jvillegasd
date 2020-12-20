@@ -32,13 +32,22 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
         }
 
         #timeline_animated {
+          transform: rotate(-90deg); /*Rotate the svg affect children tags and their properties*/
           position: absolute !important;
           left: -80px;
           top: -30px;
-          transform: rotate(-90deg);
           stroke-dasharray: 917; /* (2PI * 146px) */
           stroke-dashoffset: 917;
           animation: progress 10s linear forwards;
+        }
+
+        #song_img {
+          position: absolute;
+          border-radius: 50%;
+          top: 73px;
+          left: 50px;
+          width: 240px;
+          height: 240px;
         }
 
         #song_info {
@@ -72,10 +81,10 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
         }
       
       div(id="player")
+        div(id="song_img" style = "background-image: url(" + image_link + ");")
         div(id="timeline_base")
         div(id="svg_embedder" xmlns="http://www.w3.org/1999/xhtml")
           svg(id="timeline_animated" height="300", width="500" xmlns = "http://www.w3.org/2000/svg")
             circle(cx="176", cy="150", r="146", stroke="#CBD4C2", stroke-width="9", fill="none")
-        div()
 
         div(id="song_info")
