@@ -93,6 +93,6 @@ function getArtists(array) {
 }
 
 function defaultImageToBase64(image_path) {
-  let data_uri = "data:image/png;base64," + fs.readFileSync("./public/images/no_song.png", 'base64');
+  let data_uri = "data:image/png;base64," + fs.readFileSync(image_path, 'base64');
   return data_uri;
 }

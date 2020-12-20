@@ -8,6 +8,7 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           animation: appear 300ms ease-out forwards;
 
           /* Component CSS properties */
+          font-family: "BlinkMacSystemFont", "Segoe UI",  Helvetica, Arial, sans-serif;
           width: 341px;
           height: 571px;
           background-color: #14213D;
@@ -59,6 +60,27 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
           bottom: 0px;
         }
 
+        #artist {
+          text-align: center;
+          margin-top: 35px;
+        }
+        
+        #artist_name,
+        #song_name {
+          margin: 0;
+        }
+
+        #song_name {
+          font-size: 25px;
+          color: #283618;
+        }
+
+        #artist_name {
+          font-size:20px;
+          margin-top: 1px;
+          color: rgba(96,108,56, 0.85);
+        }
+
         .paused {
           animation-play-state: paused !important;
         }
@@ -88,3 +110,6 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
             circle(cx="176", cy="150", r="146", stroke="#CBD4C2", stroke-width="9", fill="none")
 
         div(id="song_info")
+          div(id="artist")
+            h2(id = "song_name") #{title}
+            h3(id = "artist_name") #{artist}
