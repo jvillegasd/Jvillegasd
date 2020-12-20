@@ -1,5 +1,5 @@
 <a href="https://spotify.jvillegasd.duckdns.org/?opened">
-  <img src="https://spotify.jvillegasd.duckdns.org" width="340" height="340" alt="Now Playing">
+  <img src="https://spotify.jvillegasd.duckdns.org" width="341" height="571" alt="Now Playing">
 </a>
 
 <!-- <div id = "some_issues">
