@@ -12,6 +12,7 @@ const app = express();
 app.use(body_parser.json());
 
 const root_path = path.join(__dirname, "../");
+const default_image_path = path.join(root_path, "public/images/no_song.png");
 
 // Setting views and static files
 app.set("view engine", "pug");
@@ -22,7 +23,7 @@ app.use(favicon(path.join(root_path, "public", "favicon.ico")));
 // Client stuff
 app.get("/api/song", async (request, response) => {
   // Init important variables with default values
-  let image_link = defaultImageToBase64("../public/images/no_song.png");
+  let image_link = defaultImageToBase64(default_image_path);
   let progress = "3:00";
   let duration = "3:00";
   let progress_percentage = 100;
