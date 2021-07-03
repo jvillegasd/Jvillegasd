@@ -1,3 +1,13 @@
+<h1 align="center">Hi 👋, I'm Johnny</h1>
+<h3 align="center">A software developer from Colombia</h3>
+
+- 💬 Ask me about **Python, NodeJS, AWS, Vue.js, Machine Learning, Deep Learning**
+
+## 💻 Current project
+[Financial Go](https://github.com/Jvillegasd/FinancialGo)
+
+## 🎵 Spotify status
+
 <a href="https://jvillegasd-spotify.vercel.app/api/song/?opened">
   <img src="https://jvillegasd-spotify.vercel.app/api/song" width="341" height="571" alt="Now Playing">
 </a>
