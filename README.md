@@ -3,8 +3,16 @@
 
 - 💬 Ask me about **Python, NodeJS, AWS, Vue.js, Machine Learning, Deep Learning**
 
+## 📅
+
+
 ## 💻 Current project
 [Financial Go](https://github.com/Jvillegasd/FinancialGo)
+- Solve programming problems at Codeforces, UVa, LeetCode
+- Watch anime and Tv shows
+- Read some manga
+- Play videogames
+- etc.
 
 ## 🎵 Spotify status
 
