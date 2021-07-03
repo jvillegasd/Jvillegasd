@@ -4,7 +4,7 @@ const express = require("express");
 const body_parser = require("body-parser");
 const path = require("path");
 const favicon = require("serve-favicon");
-const spotify = require("./spotify");
+const spotify = require("./libs/spotify");
 const fs = require("fs");
 
 const app = express();
