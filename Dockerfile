@@ -1,13 +1,13 @@
 FROM node:alpine
 
 RUN mkdir -p /app
-WORKDIR /app
+WORKDIR /app/api
 
 RUN npm install --global nodemon
 
-COPY package*.json ./
+COPY ./api/package*.json ./
 RUN npm install --quiet --no-optional
 
 EXPOSE ${NODEJS_PORT}
 
-CMD nodemon server.js
+CMD nodemon index.js

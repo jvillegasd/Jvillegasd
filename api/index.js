@@ -11,16 +11,18 @@ const app = express();
 
 app.use(body_parser.json());
 
+const root_path = path.join(__dirname, "../");
+
 // Setting views and static files
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
-app.use('/public', express.static(path.join(__dirname, "public")));
-app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+app.use('/public', express.static(path.join(root_path, "public")));
+app.use(favicon(path.join(root_path, "public", "favicon.ico")));
 
 // Client stuff
 app.get("/", async (request, response) => {
   // Init important variables with default values
-  let image_link = defaultImageToBase64("./public/images/no_song.png");
+  let image_link = defaultImageToBase64("../public/images/no_song.png");
   let progress = "3:00";
   let duration = "3:00";
   let progress_percentage = 100;
@@ -93,6 +95,6 @@ function defaultImageToBase64(image_path) {
   return data_uri;
 }
 
-const port = process.env.PORT || 3000;
+const port = process.env.NODE_PORT || 3000;
 
 app.listen(port, () => console.log(`Server running on ${port}`));
