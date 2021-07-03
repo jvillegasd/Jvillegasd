@@ -20,7 +20,7 @@ app.use('/public', express.static(path.join(root_path, "public")));
 app.use(favicon(path.join(root_path, "public", "favicon.ico")));
 
 // Client stuff
-app.get("/", async (request, response) => {
+app.get("/api/song", async (request, response) => {
   // Init important variables with default values
   let image_link = defaultImageToBase64("../public/images/no_song.png");
   let progress = "3:00";
