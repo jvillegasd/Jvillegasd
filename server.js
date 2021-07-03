@@ -78,10 +78,6 @@ app.get("/api/", (request, response) => {
   response.status(200).json({ message: "Server's up" });
 });
 
-app.listen(process.env.NODE_PORT, () => {
-  console.log(`Server's up and listening on port ${process.env.NODE_PORT}`);
-});
-
 // Some utils functions
 function getArtists(array) {
   let artists = "";
@@ -96,3 +92,5 @@ function defaultImageToBase64(image_path) {
   let data_uri = "data:image/png;base64," + fs.readFileSync(image_path, 'base64');
   return data_uri;
 }
+
+module.exports = app;
