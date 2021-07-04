@@ -1,7 +1,14 @@
 <h1 align="center">Hi 👋, I'm Johnny</h1>
 <h3 align="center">A software developer from Colombia</h3>
 
-- 💬 Ask me about **Python, NodeJS, AWS, Vue.js, Machine Learning, Deep Learning**
+## 💬 Ask me about
+- Python
+- NodeJS
+- AWS
+- Docker
+- Vue.js
+- Machine Learning
+- Deep Learning
 
 ## 📅 Hobbies
 - Solve programming problems at Codeforces, UVa, LeetCode
