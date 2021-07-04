@@ -2,12 +2,9 @@
 <h3 align="center">A software developer from Colombia</h3>
 
 ## 💬 Ask me about
-- Python
-- NodeJS
-- AWS
+- Backend web development
+- Frontend web development (Vue.js)
 - Docker
-- Vue.js
-- Machine Learning
 - Deep Learning
 
 ## 📅 Hobbies
