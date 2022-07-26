@@ -1,11 +1,12 @@
 <h1 align="center">Hi 👋, I'm Johnny</h1>
-<h3 align="center">A software developer from Colombia</h3>
+<h3 align="center">A software engineer from Colombia</h3>
 
 ## 💬 Ask me about
-- Backend web development
+- Backend web development (Python, Node.js)
 - Frontend web development (Vue.js)
 - Docker
-- Deep Learning
+- Deep Learning and Machine Learning
+- Microservices
 
 ## 📅 Hobbies
 - Solve programming problems at Codeforces, UVa, LeetCode
