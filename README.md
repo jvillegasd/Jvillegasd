@@ -15,8 +15,7 @@
 - etc.
 
 ## 💻 Current project
-- [Financial Go](https://github.com/Jvillegasd/FinancialGo)
-- [tetris-go](https://github.com/Jvillegasd/tetris-go)
+- [financial-go](https://github.com/Jvillegasd/financial-go)
 
 ## 🎵 Spotify status
 
