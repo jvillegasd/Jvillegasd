@@ -7,6 +7,7 @@
 - Docker
 - Deep Learning and Machine Learning
 - Microservices
+- Gardening
 
 ## 📅 Hobbies
 - Solve programming problems at Codeforces, UVa, LeetCode
