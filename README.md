@@ -11,7 +11,7 @@
 
 ## 📅 Hobbies
 - Solve programming problems at Codeforces, UVa, LeetCode
-- Watch anime and Tv shows
+- Watch anime and TV shows
 - Read some manga
 - Play videogames
 - etc.
