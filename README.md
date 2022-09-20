@@ -20,7 +20,7 @@
 ## 💻 Current project
 - [financial-go](https://github.com/Jvillegasd/financial-go)
 
-## 📚 Learning:
+## 📚 Learning
 - Platzi courses about Backend development Roadmap
 - React.js with my Gf 👩‍❤️‍👨
 
