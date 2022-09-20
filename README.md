@@ -2,22 +2,27 @@
 <h3 align="center">A software engineer from Colombia</h3>
 
 ## 💬 Ask me about
-- Backend web development (Python, Node.js)
+- Backend web development (Python, Node.js, PHP)
 - Frontend web development (Vue.js)
 - Docker
 - Deep Learning and Machine Learning
-- Microservices
-- Gardening
+- Cloud Architecture
+- Design Patterns
+- Gardening (Bonsai enthusiast :evergreen_tree:)
 
 ## 📅 Hobbies
 - Solve programming problems at Codeforces, UVa, LeetCode
 - Watch anime and TV shows
 - Read some manga
 - Play videogames
-- etc.
+- etc...
 
 ## 💻 Current project
 - [financial-go](https://github.com/Jvillegasd/financial-go)
+
+## 📚 Learning:
+- Platzi courses about Backend development Roadmap
+- React.js with my Gf 👩‍❤️‍👨
 
 ## 🎵 Spotify status
 
