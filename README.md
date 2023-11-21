@@ -2,13 +2,14 @@
 <h3 align="center">A software engineer from Colombia</h3>
 
 ## 💬 Ask me about
-- Backend web development (Python, Node.js, PHP)
-- Frontend web development (Vue.js)
+- Backend web development (Python, TypeScript, PHP)
+- Frontend web development (Vue.js, React.js)
 - Docker
 - Deep Learning and Machine Learning
 - Cloud Architecture
 - Design Patterns
 - Gardening (Bonsai enthusiast :evergreen_tree:)
+- Side projects (Lazy Link ft. @dmfigueroa)
 
 ## 📅 Hobbies
 - Solve programming problems at Codeforces, UVa, LeetCode
@@ -17,12 +18,17 @@
 - Play videogames
 - etc...
 
-## 💻 Current project
-- [financial-go](https://github.com/Jvillegasd/financial-go)
+## 💻 Current projects
+- viajin [WIP] - Side project
+- budget [WIP] - Side project
+- todo [WIP] - Side project
 
 ## 📚 Learning
-- Platzi courses about Backend development Roadmap
-- React.js with my Gf 👩‍❤️‍👨
+- React.js with my wife 👩‍❤️‍👨
+- Hono.js with RPC
+- Remix
+- TypeScript
+- Cloudflare workers
 
 ## 🎵 Spotify status
 
