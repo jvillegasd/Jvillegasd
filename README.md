@@ -32,8 +32,8 @@
 
 ## 🎵 Spotify status
 
-<a href="https://jvillegasd-spotify.vercel.app/api/song/?opened">
-  <img src="https://jvillegasd-spotify.vercel.app/api/song" width="341" height="571" alt="Now Playing">
+<a href="https://spotify-widget.jvillegasd.com/api/song/?opened">
+  <img src="https://spotify-widget.jvillegasd.com/api/song" width="341" height="571" alt="Now Playing">
 </a>
 
 <!-- <div id = "some_issues">
