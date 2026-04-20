@@ -5,6 +5,7 @@ let querystring = require("querystring");
 
 const {
   SPOTIFY_CLIENT_ID: client_id,
+  SPOTIFY_CLIENT_SECRET: client_secret,
   SPOTIFY_REFRESH_TOKEN: refresh_token
 } = process.env;
 
@@ -13,8 +14,8 @@ const RECENTLY_PLAYED_ENDPOINT = "https://api.spotify.com/v1/me/player/recently-
 const GET_TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 
 async function getAccessToken() {
-  if (!client_id || !refresh_token) {
-    console.error("Spotify: missing SPOTIFY_CLIENT_ID or SPOTIFY_REFRESH_TOKEN env var");
+  if (!client_id || !client_secret || !refresh_token) {
+    console.error("Spotify: missing SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET or SPOTIFY_REFRESH_TOKEN env var");
     return null;
   }
 
@@ -27,9 +28,12 @@ async function getAccessToken() {
       },
       data: querystring.stringify({
         grant_type: "refresh_token",
-        refresh_token,
-        client_id
-      })
+        refresh_token
+      }),
+      auth: {
+        username: client_id,
+        password: client_secret
+      }
     });
 
     if (response.status !== 200 || !response.data.access_token) {
