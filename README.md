@@ -1,15 +1,13 @@
 <h1 align="center">Hi 👋, I'm Johnny</h1>
 <h3 align="center">A software engineer from Colombia</h3>
 
-## 💬 Ask me about
-- Backend web development (Python, TypeScript, PHP)
-- Frontend web development (Vue.js, React.js)
-- Docker
-- Deep Learning and Machine Learning
-- Cloud Architecture
-- Design Patterns
-- Gardening (Bonsai enthusiast :evergreen_tree:)
-- Side projects (Lazy Link ft. @dmfigueroa)
+## 🛠️ Tech stack
+
+<p>
+  <img src="https://skillicons.dev/icons?i=python,js,ts,php,react,mysql,postgres,redis,neo4j,docker,githubactions" alt="Tech stack icons" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Coolify-8E3FFF?style=for-the-badge&logo=coolify&logoColor=white" height="48" alt="Coolify" />
+</p>
 
 ## 📅 Hobbies
 - Solve programming problems at Codeforces, UVa, LeetCode
@@ -23,6 +21,8 @@
 - Automating my personal finances [WIP] - Side project
   - cashu
   - cashu - File malware detection
+  - Transactions sync
+  - Telegram bot with OCR for bill tracking
 
 ## 🎵 Spotify status
 
