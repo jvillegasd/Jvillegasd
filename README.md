@@ -19,6 +19,10 @@
 
 <img src="https://skillicons.dev/icons?i=docker,githubactions" alt="Docker, GitHub Actions" />&nbsp;<img src="https://img.shields.io/badge/Coolify-8E3FFF?style=for-the-badge&logo=coolify&logoColor=white" height="48" alt="Coolify" />
 
+**Work environment**
+
+<img src="https://skillicons.dev/icons?i=neovim" alt="Neovim" />&nbsp;<img src="https://img.shields.io/badge/Ghostty-1C1B1F?style=for-the-badge&logo=ghostty&logoColor=white" height="48" alt="Ghostty" />&nbsp;<img src="https://img.shields.io/badge/Codex-000000?style=for-the-badge&logo=openai&logoColor=white" height="48" alt="Codex" />&nbsp;<img src="https://img.shields.io/badge/Claude%20Code-D97706?style=for-the-badge&logo=anthropic&logoColor=white" height="48" alt="Claude Code" />
+
 ## 📅 Hobbies
 - Solve programming problems at Codeforces, UVa, LeetCode
 - Watch anime and TV shows
