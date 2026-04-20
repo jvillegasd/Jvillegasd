@@ -20,15 +20,9 @@
 
 ## 💻 Current projects
 - viajin [WIP] - Side project
-- budget [WIP] - Side project
-- todo [WIP] - Side project
-
-## 📚 Learning
-- React.js with my wife 👩‍❤️‍👨
-- Hono.js with RPC
-- Remix
-- TypeScript
-- Cloudflare workers
+- cashu [WIP] - Side project
+- cashu - File malware detection [WIP] - Side project
+- Automating my personal finances - Side project
 
 ## 🎵 Spotify status
 
