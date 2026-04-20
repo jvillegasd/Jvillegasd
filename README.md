@@ -31,7 +31,7 @@
 - Automating my personal finances [WIP] - Side project
   - cashu
   - cashu - File malware detection
-  - Transactions sync
+  - Transactions sync listener
   - Telegram bot with OCR for bill tracking
 
 ## 🎵 Spotify status
