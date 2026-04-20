@@ -33,7 +33,6 @@ app.get("/api/song", async (request, response) => {
   let artist = "Someone";
   let spotify_link = "#";
   let paused = "paused";
-  let animation_delay = "";
   let title_marquee = "";
   let artist_marquee = "";
 
@@ -61,7 +60,6 @@ app.get("/api/song", async (request, response) => {
     paused = (spotify_data.is_playing) ? "" : "paused";
     title_marquee = overflowsInfo(title, 12) ? "marquee" : "";
     artist_marquee = overflowsInfo(artist, 7.5) ? "marquee" : "";
-    animation_delay = `animation: progress ${duration}ms linear; animation-delay: -${progress}ms;`;
 
     // If someone comes from Github, redirect them to Spotify
     if (opened !== undefined) {
@@ -75,13 +73,14 @@ app.get("/api/song", async (request, response) => {
     response.render("music_player", {
       image_link,
       progress_percentage,
+      progress,
+      duration,
       progress_time,
       duration_time,
       title,
       artist,
       spotify_link,
       paused,
-      animation_delay,
       title_marquee,
       artist_marquee
     });

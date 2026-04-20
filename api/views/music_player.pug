@@ -2,6 +2,7 @@ svg(width = "460" height = "240" fill="none" xmlns = "http://www.w3.org/2000/svg
   foreignObject(x = "0" y = "0" width = "460" height = "240")
     div(xmlns = "http://www.w3.org/1999/xhtml")
       style.
+        <![CDATA[
 
         #player {
           width: 460px;
@@ -282,9 +283,47 @@ svg(width = "460" height = "240" fill="none" xmlns = "http://www.w3.org/2000/svg
 
         #progress_fill {
           height: 100%;
+          width: 0%;
           background: linear-gradient(90deg, #8b7335 0%, #c9a961 50%, #f4e4b8 100%);
           border-radius: 2px;
           box-shadow: 0 0 4px rgba(201,169,97,0.7);
+          animation: progress_fill linear forwards;
+          animation-duration: var(--dur-ms, 1ms);
+          animation-delay: var(--delay-ms, 0ms);
+        }
+
+        @keyframes progress_fill {
+          from { width: 0%; }
+          to { width: 100%; }
+        }
+
+        @property --elapsed-s {
+          syntax: "<integer>";
+          inherits: false;
+          initial-value: 0;
+        }
+
+        #time_current {
+          animation: tick linear forwards;
+          animation-duration: var(--dur-ms, 1ms);
+          animation-delay: var(--delay-ms, 0ms);
+          counter-reset:
+            tm round(down, calc(var(--elapsed-s) / 60))
+            ts mod(var(--elapsed-s), 60);
+        }
+
+        #time_current::before {
+          content: counter(tm) ":" counter(ts, decimal-leading-zero);
+        }
+
+        @keyframes tick {
+          from { --elapsed-s: 0; }
+          to   { --elapsed-s: var(--dur-s, 0); }
+        }
+
+        .paused #progress_fill,
+        .paused #time_current {
+          animation-play-state: paused;
         }
 
         #times {
@@ -300,8 +339,10 @@ svg(width = "460" height = "240" fill="none" xmlns = "http://www.w3.org/2000/svg
         @keyframes spin {
           to { transform: rotate(360deg); }
         }
+        ]]>
 
-      div(id="player" class = "" + paused + "")
+      - var dur_s = Math.max(1, Math.floor(duration / 1000))
+      div(id="player" class = "" + paused + "" style = "--dur-ms: " + duration + "ms; --delay-ms: -" + progress + "ms; --dur-s: " + dur_s + ";")
         div(id="plinth")
           div(id="platter_mat")
             div(id="vinyl")
@@ -320,7 +361,7 @@ svg(width = "460" height = "240" fill="none" xmlns = "http://www.w3.org/2000/svg
               h3(id="artist_name") #{artist}
           div(id="progress_wrap")
             div(id="progress_base")
-              div(id="progress_fill" style = "width: " + progress_percentage + "%;")
+              div(id="progress_fill")
             div(id="times")
-              span(id="time_current") #{progress_time}
+              span(id="time_current")
               span(id="time_total") #{duration_time}
