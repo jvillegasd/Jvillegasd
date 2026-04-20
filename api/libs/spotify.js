@@ -5,7 +5,6 @@ let querystring = require("querystring");
 
 const {
   SPOTIFY_CLIENT_ID: client_id,
-  SPOTIFY_CLIENT_SECRET: client_secret,
   SPOTIFY_REFRESH_TOKEN: refresh_token
 } = process.env;
 
@@ -19,21 +18,18 @@ async function getAccessToken() {
       url: GET_TOKEN_ENDPOINT,
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded" 
+        "Content-Type": "application/x-www-form-urlencoded"
       },
       data: querystring.stringify({
         grant_type: "refresh_token",
-        refresh_token
-      }),
-      auth: {
-        username: client_id,
-        password: client_secret
-      }
+        refresh_token,
+        client_id
+      })
     });
 
     return (response.status === 200) ? `Bearer ${response.data.access_token}` : {};
   } catch (error) {
-    console.log("Spotify error", "getting access token", error);
+    console.log("Spotify error", "getting access token", error.response ? error.response.data : error.message);
     return {};
   }
 }
