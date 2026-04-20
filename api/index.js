@@ -24,9 +24,11 @@ app.use(favicon(path.join(root_path, "public", "favicon.ico")));
 app.get("/api/song", async (request, response) => {
   // Init important variables with default values
   let image_link = defaultImageToBase64(default_image_path);
-  let progress = "3:00";
-  let duration = "3:00";
-  let progress_percentage = 100;
+  let progress = 0;
+  let duration = 0;
+  let progress_time = "0:00";
+  let duration_time = "0:00";
+  let progress_percentage = 0;
   let title = "Fetching data...";
   let artist = "Someone";
   let spotify_link = "#";
@@ -48,6 +50,8 @@ app.get("/api/song", async (request, response) => {
     image_link = spotify_data.album.image;
     duration = spotify_data.duration_ms;
     progress = spotify_data.progress_ms;
+    progress_time = formatTime(progress);
+    duration_time = formatTime(duration);
     progress_percentage = Math.floor(
       (spotify_data.progress_ms / spotify_data.duration_ms) * 100
     );
@@ -67,6 +71,8 @@ app.get("/api/song", async (request, response) => {
     response.render("music_player", {
       image_link,
       progress_percentage,
+      progress_time,
+      duration_time,
       title,
       artist,
       spotify_link,
@@ -94,6 +100,13 @@ function getArtists(array) {
 function defaultImageToBase64(image_path) {
   let data_uri = "data:image/png;base64," + fs.readFileSync(image_path, 'base64');
   return data_uri;
+}
+
+function formatTime(ms) {
+  const total_seconds = Math.max(0, Math.floor(ms / 1000));
+  const minutes = Math.floor(total_seconds / 60);
+  const seconds = total_seconds % 60;
+  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
 const port = process.env.NODE_PORT || 3000;
