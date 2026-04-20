@@ -21,7 +21,7 @@ app.use('/public', express.static(path.join(root_path, "public")));
 app.use(favicon(path.join(root_path, "public", "favicon.ico")));
 
 // Client stuff
-app.get("/api/song", async (request, response) => {
+app.get("/song", async (request, response) => {
   // Init important variables with default values
   let image_link = defaultImageToBase64(default_image_path);
   let progress = 0;
@@ -88,7 +88,7 @@ app.get("/api/song", async (request, response) => {
 });
 
 // Server stuff
-app.get("/api/", (request, response) => {
+app.get("/up", (request, response) => {
   response.status(200).json({ message: "Server's up" });
 });
 
