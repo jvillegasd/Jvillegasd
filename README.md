@@ -20,9 +20,9 @@
 
 ## 💻 Current projects
 - viajin [WIP] - Side project
-- cashu [WIP] - Side project
-- cashu - File malware detection [WIP] - Side project
-- Automating my personal finances - Side project
+- Automating my personal finances [WIP] - Side project
+  - cashu
+  - cashu - File malware detection
 
 ## 🎵 Spotify status
 
