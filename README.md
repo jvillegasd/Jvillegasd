@@ -3,12 +3,21 @@
 
 ## 🛠️ Tech stack
 
-<p>
-  <img src="https://skillicons.dev/icons?i=python,js,ts,php,react,mysql,postgres,redis,docker,githubactions" alt="Tech stack icons" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" height="48" alt="Neo4j" />
-  <img src="https://img.shields.io/badge/Coolify-8E3FFF?style=for-the-badge&logo=coolify&logoColor=white" height="48" alt="Coolify" />
-</p>
+**Languages**
+
+<img src="https://skillicons.dev/icons?i=python,js,ts,php" alt="Python, JavaScript, TypeScript, PHP" />
+
+**Frontend**
+
+<img src="https://skillicons.dev/icons?i=react" alt="React" />
+
+**Databases**
+
+<img src="https://skillicons.dev/icons?i=mysql,postgres,redis" alt="MySQL, PostgreSQL, Redis" />&nbsp;<img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" height="48" alt="Neo4j" />
+
+**DevOps**
+
+<img src="https://skillicons.dev/icons?i=docker,githubactions" alt="Docker, GitHub Actions" />&nbsp;<img src="https://img.shields.io/badge/Coolify-8E3FFF?style=for-the-badge&logo=coolify&logoColor=white" height="48" alt="Coolify" />
 
 ## 📅 Hobbies
 - Solve programming problems at Codeforces, UVa, LeetCode
