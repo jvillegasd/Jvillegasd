@@ -1,0 +1,14 @@
+.git
+.gitignore
+.dockerignore
+.vercelignore
+README.md
+vercel.json
+docker-compose.yml
+docker-compose.prod.yml
+Dockerfile
+Dockerfile.prod
+**/node_modules
+**/.env
+**/.env.*
+npm-debug.log

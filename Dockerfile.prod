@@ -1,0 +1,18 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY api/package*.json ./api/
+RUN cd api && npm ci --omit=dev --no-audit --no-fund
+
+COPY api ./api
+COPY public ./public
+
+ENV NODE_ENV=production
+ENV NODE_PORT=3000
+EXPOSE 3000
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s \
+  CMD wget -q --spider http://localhost:3000/api/ || exit 1
+
+CMD ["node", "api/index.js"]
