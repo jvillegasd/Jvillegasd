@@ -4,118 +4,291 @@ svg(width = "341" height = "571" fill="none" xmlns = "http://www.w3.org/2000/svg
       style.
 
         #player {
-          /* Animation CSS properties */
-          animation: appear 300ms ease-out forwards;
-
-          /* Component CSS properties */
-          font-family: "BlinkMacSystemFont", "Segoe UI",  Helvetica, Arial, sans-serif;
           width: 341px;
           height: 571px;
-          background-color: #14213D;
-          border-radius: 67px;
-          opacity: 0.8;
           position: relative;
-        }
-        
-        #timeline_base {
-          position: absolute; 
-          border: 2px solid rgba(229, 229, 229, 1);
-          width: 290px;
-          height: 290px;
-          margin-top: 47px;
-          margin-left: 21px;
-          border-radius: 50%;
-        }
-        
-        #svg_embedder {
-          width: 341px;
-          height: 571px;
+          font-family: Georgia, "Times New Roman", serif;
         }
 
-        #timeline_animated {
-          transform: rotate(-90deg); /*Rotate the svg affect children tags and their properties*/
-          position: absolute !important;
-          left: -80px;
-          top: -30px;
-          stroke-dasharray: 917; /* (2PI * 146px) */
-          stroke-dashoffset: 917;
-        }
-
-        #img_cropper {
+        #plinth {
           position: absolute;
-          top: 73px;
-          left: 50px;
-          width: 240px;
-          height: 240px;
-          overflow: hidden;
-          border-radius: 50%;
+          top: 16px;
+          left: 12px;
+          width: 317px;
+          height: 539px;
+          border-radius: 14px;
+          background:
+            repeating-linear-gradient(
+              94deg,
+              rgba(0,0,0,0.10) 0 1px,
+              rgba(255,220,160,0.04) 1px 3px,
+              rgba(0,0,0,0.14) 3px 4px,
+              transparent 4px 11px),
+            linear-gradient(162deg, #6b3f20 0%, #432312 55%, #2a170a 100%);
+          box-shadow:
+            0 22px 34px rgba(0,0,0,0.55),
+            inset 0 2px 3px rgba(255,200,140,0.18),
+            inset 0 -3px 6px rgba(0,0,0,0.55),
+            inset 0 0 0 2px rgba(201,169,97,0.35);
         }
 
-        #song_img {
-          height: 300px;
-          width: 300px;
+        #platter_mat {
+          position: absolute;
+          top: 44px;
+          left: 33px;
+          width: 251px;
+          height: 251px;
+          border-radius: 50%;
+          background: radial-gradient(circle at center, #1a0f08 0%, #0a0604 100%);
+          box-shadow:
+            0 10px 18px rgba(0,0,0,0.65),
+            inset 0 0 0 3px #c9a961,
+            inset 0 0 0 4px rgba(0,0,0,0.35),
+            inset 0 0 0 10px rgba(201,169,97,0.35),
+            inset 0 0 14px rgba(0,0,0,0.6);
+        }
+
+        #vinyl {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          width: 221px;
+          height: 221px;
+          border-radius: 50%;
+          background:
+            repeating-radial-gradient(circle at center,
+              rgba(255,255,255,0.05) 0 1px,
+              rgba(0,0,0,0) 1px 2px,
+              rgba(255,255,255,0.02) 2px 3px,
+              rgba(0,0,0,0) 3px 4px),
+            radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+          box-shadow:
+            0 0 0 1px rgba(255,255,255,0.06),
+            inset 0 0 22px rgba(255,220,160,0.04);
+          animation: spin 3.2s linear infinite;
+          transform-origin: center center;
+        }
+
+        #label {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 96px;
+          height: 96px;
+          margin: -48px 0 0 -48px;
+          border-radius: 50%;
+          overflow: hidden;
+          box-shadow:
+            0 0 0 3px #c9a961,
+            0 0 0 4px rgba(0,0,0,0.45),
+            0 0 0 6px rgba(201,169,97,0.25);
+        }
+
+        #album_art {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+        }
+
+        #spindle {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 9px;
+          height: 9px;
+          margin: -4.5px 0 0 -4.5px;
+          border-radius: 50%;
+          background: radial-gradient(circle at 30% 30%, #fff2c6 0%, #c9a961 55%, #6b5a30 100%);
+          box-shadow: 0 1px 2px rgba(0,0,0,0.6);
+          z-index: 3;
+        }
+
+        #tonearm_arm {
+          position: absolute;
+          top: 62px;
+          left: 285px;
+          width: 4px;
+          height: 146px;
+          background: linear-gradient(90deg, #5e5e5e 0%, #dedede 30%, #f4f4f4 50%, #b0b0b0 80%, #4f4f4f 100%);
+          border-radius: 2px;
+          transform-origin: top center;
+          transform: rotate(-20deg);
+          box-shadow: 1px 2px 3px rgba(0,0,0,0.35);
+          z-index: 4;
+        }
+
+        #counterweight {
+          position: absolute;
+          top: -16px;
+          left: -10px;
+          width: 24px;
+          height: 18px;
+          border-radius: 5px;
+          background: radial-gradient(ellipse at 30% 35%, #d9b96d 0%, #8b7335 55%, #4d3f1e 100%);
+          box-shadow:
+            0 2px 3px rgba(0,0,0,0.45),
+            inset 0 1px 1px rgba(255,230,180,0.4);
+        }
+
+        #headshell {
+          position: absolute;
+          bottom: -10px;
+          left: -9px;
+          width: 22px;
+          height: 14px;
+          background: linear-gradient(180deg, #2b2b2b 0%, #0d0d0d 100%);
+          border-radius: 2px;
+          transform-origin: top right;
+          transform: rotate(22deg);
+          box-shadow: 0 2px 3px rgba(0,0,0,0.55);
+        }
+
+        #cartridge {
+          position: absolute;
+          bottom: -7px;
+          left: 4px;
+          width: 0;
+          height: 0;
+          border-left: 3px solid transparent;
+          border-right: 3px solid transparent;
+          border-top: 8px solid #d9d9d9;
+        }
+
+        #tonearm_pivot {
+          position: absolute;
+          top: 52px;
+          left: 270px;
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          background: radial-gradient(circle at 32% 32%, #f5e6b3 0%, #c9a961 45%, #7a5d22 100%);
+          box-shadow:
+            0 3px 5px rgba(0,0,0,0.5),
+            inset 0 -2px 3px rgba(0,0,0,0.4),
+            inset 0 1px 2px rgba(255,240,200,0.5);
+          z-index: 5;
+        }
+
+        #tonearm_pivot::after {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: radial-gradient(circle at 35% 35%, #fffbe8 0%, #b8933a 65%, #3d2d0f 100%);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,0.4);
+        }
+
+        .paused #vinyl {
+          animation-play-state: paused;
+        }
+
+        .paused #tonearm_arm {
+          transform: rotate(6deg);
         }
 
         #song_info {
-          width: 341px;
-          height: 171px;
-          background-color: #CBD4C2;
-          border-radius: 60px 60px 67px 67px;
           position: absolute;
-          bottom: 0px;
-        }
-
-        #artist {
+          left: 28px;
+          right: 28px;
+          top: 380px;
           text-align: center;
-          margin-top: 50px;
-        }
-        
-        #artist_name,
-        #song_name {
-          margin: 0;
         }
 
         #song_name {
-          font-size: 25px;
-          color: #283618;
+          font-size: 22px;
+          color: #f5e6d3;
+          margin: 0;
+          font-weight: 600;
+          letter-spacing: 0.6px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-shadow: 0 1px 2px rgba(0,0,0,0.7);
         }
 
         #artist_name {
-          font-size:20px;
-          margin-top: 1px;
-          color: rgba(96,108,56, 0.85);
+          font-size: 15px;
+          color: #c9a961;
+          margin: 6px 0 0 0;
+          font-style: italic;
+          font-weight: normal;
+          letter-spacing: 1px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-shadow: 0 1px 2px rgba(0,0,0,0.6);
         }
 
-        .paused {
-          animation-play-state: paused !important;
+        #power_led {
+          position: absolute;
+          top: 316px;
+          left: 42px;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: radial-gradient(circle at 30% 30%, #ffd27a 0%, #e0632a 50%, #5e0e10 100%);
+          box-shadow:
+            0 0 6px rgba(255,150,60,0.75),
+            0 0 2px rgba(255,200,120,0.9);
         }
 
-        @keyframes appear {
-          from {
-            opacity: 0;
-            transform: scale(0.6);
-          }
-          to {
-            opacity: 0.8;
-            transform: scale(1);
-          }
+        #badge {
+          position: absolute;
+          top: 312px;
+          right: 44px;
+          color: #c9a961;
+          font-family: "Courier New", monospace;
+          font-size: 10px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          opacity: 0.75;
         }
 
-        @keyframes progress {
-          to {
-            stroke-dashoffset: 0;
-          }
+        #progress_base {
+          position: absolute;
+          left: 40px;
+          right: 40px;
+          bottom: 60px;
+          height: 3px;
+          background: rgba(0,0,0,0.55);
+          border-radius: 2px;
+          overflow: hidden;
+          box-shadow:
+            inset 0 1px 1px rgba(0,0,0,0.8),
+            0 1px 0 rgba(255,220,160,0.08);
         }
-      
-      div(id="player")
-        div(id="img_cropper")
-          div(id="song_img" style = "background-image: url(" + image_link + ");")
-        div(id="timeline_base")
-        div(id="svg_embedder" xmlns="http://www.w3.org/1999/xhtml")
-          svg(id="timeline_animated" height="300", width="500" xmlns = "http://www.w3.org/2000/svg" style = "" + animation_delay + "" class = "" + paused + "")
-            circle(cx="176", cy="150", r="146", stroke="#CBD4C2", stroke-width="9", fill="none")
 
-        div(id="song_info")
-          div(id="artist")
-            h2(id = "song_name") #{title}
-            h3(id = "artist_name") #{artist}
+        #progress_fill {
+          height: 100%;
+          background: linear-gradient(90deg, #8b7335 0%, #c9a961 50%, #f4e4b8 100%);
+          border-radius: 2px;
+          box-shadow: 0 0 5px rgba(201,169,97,0.7);
+        }
+
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+
+      div(id="player" class = "" + paused + "")
+        div(id="plinth")
+          div(id="platter_mat")
+            div(id="vinyl")
+              div(id="label")
+                div(id="album_art" style = "background-image: url(" + image_link + ");")
+              div(id="spindle")
+          div(id="tonearm_arm")
+            div(id="counterweight")
+            div(id="headshell")
+              div(id="cartridge")
+          div(id="tonearm_pivot")
+          div(id="power_led")
+          div(id="badge") 33⅓
+          div(id="song_info")
+            h2(id="song_name") #{title}
+            h3(id="artist_name") #{artist}
+          div(id="progress_base")
+            div(id="progress_fill" style = "width: " + progress_percentage + "%;")
