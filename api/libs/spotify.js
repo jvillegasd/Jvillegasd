@@ -13,6 +13,11 @@ const RECENTLY_PLAYED_ENDPOINT = "https://api.spotify.com/v1/me/player/recently-
 const GET_TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 
 async function getAccessToken() {
+  if (!client_id || !refresh_token) {
+    console.error("Spotify: missing SPOTIFY_CLIENT_ID or SPOTIFY_REFRESH_TOKEN env var");
+    return null;
+  }
+
   try {
     let response = await axios({
       url: GET_TOKEN_ENDPOINT,
@@ -27,16 +32,24 @@ async function getAccessToken() {
       })
     });
 
-    return (response.status === 200) ? `Bearer ${response.data.access_token}` : {};
+    if (response.status !== 200 || !response.data.access_token) {
+      console.error("Spotify: refresh returned non-200", response.status, response.data);
+      return null;
+    }
+    return `Bearer ${response.data.access_token}`;
   } catch (error) {
-    console.log("Spotify error", "getting access token", error.response ? error.response.data : error.message);
-    return {};
+    const detail = error.response
+      ? { status: error.response.status, body: error.response.data }
+      : { message: error.message };
+    console.error("Spotify: refresh request failed", JSON.stringify(detail));
+    return null;
   }
 }
 
 module.exports.nowPlaying = async () => {
   try {
     let access_token = await getAccessToken();
+    if (!access_token) return false;
     let response = await axios(NOW_PLAYING_ENDPOINT, {
       method: "GET",
       headers: { "Authorization": access_token }
@@ -83,6 +96,7 @@ module.exports.nowPlaying = async () => {
 module.exports.recentlyPlayed = async () => {
   try {
     let access_token = await getAccessToken();
+    if (!access_token) return false;
     let response = await axios(RECENTLY_PLAYED_ENDPOINT, {
       method: "GET",
       headers: { Authorization: access_token }
