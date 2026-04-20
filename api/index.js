@@ -34,6 +34,8 @@ app.get("/api/song", async (request, response) => {
   let spotify_link = "#";
   let paused = "paused";
   let animation_delay = "";
+  let title_marquee = "";
+  let artist_marquee = "";
 
   // Get "Redirect to Spotify" query param
   let opened = request.query.opened;
@@ -57,6 +59,8 @@ app.get("/api/song", async (request, response) => {
     );
     spotify_link = spotify_data.external_urls.spotify;
     paused = (spotify_data.is_playing) ? "" : "paused";
+    title_marquee = overflowsInfo(title, 12) ? "marquee" : "";
+    artist_marquee = overflowsInfo(artist, 7.5) ? "marquee" : "";
     animation_delay = `animation: progress ${duration}ms linear; animation-delay: -${progress}ms;`;
 
     // If someone comes from Github, redirect them to Spotify
@@ -77,7 +81,9 @@ app.get("/api/song", async (request, response) => {
       artist,
       spotify_link,
       paused,
-      animation_delay
+      animation_delay,
+      title_marquee,
+      artist_marquee
     });
   }
 });
@@ -107,6 +113,12 @@ function formatTime(ms) {
   const minutes = Math.floor(total_seconds / 60);
   const seconds = total_seconds % 60;
   return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+}
+
+const INFO_WIDTH_PX = 216;
+
+function overflowsInfo(text, avg_char_px) {
+  return text.length * avg_char_px > INFO_WIDTH_PX;
 }
 
 const port = process.env.NODE_PORT || 3000;

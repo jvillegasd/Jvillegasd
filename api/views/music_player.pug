@@ -193,29 +193,74 @@ svg(width = "460" height = "240" fill="none" xmlns = "http://www.w3.org/2000/svg
           right: 22px;
         }
 
-        #song_name {
-          font-size: 22px;
-          color: #f5e6d3;
-          margin: 0;
-          font-weight: 600;
-          letter-spacing: 0.5px;
+        #title_wrap,
+        #artist_wrap {
+          overflow: hidden;
+          width: 100%;
+        }
+
+        #artist_wrap {
+          margin-top: 6px;
+        }
+
+        #song_name,
+        #artist_name {
+          display: block;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          margin: 0;
+        }
+
+        #song_name {
+          font-size: 22px;
+          color: #f5e6d3;
+          font-weight: 600;
+          letter-spacing: 0.5px;
           text-shadow: 0 1px 2px rgba(0,0,0,0.7);
         }
 
         #artist_name {
           font-size: 14px;
           color: #c9a961;
-          margin: 6px 0 0 0;
           font-style: italic;
           font-weight: normal;
           letter-spacing: 0.8px;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
           text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+        }
+
+        #title_wrap.marquee #song_name,
+        #artist_wrap.marquee #artist_name {
+          display: inline-block;
+          width: auto;
+          padding-right: 28px;
+          overflow: visible;
+          text-overflow: clip;
+        }
+
+        #title_wrap.marquee #song_name {
+          animation: marquee_title 24s ease-in-out infinite;
+        }
+
+        #artist_wrap.marquee #artist_name {
+          animation: marquee_artist 24s ease-in-out infinite;
+        }
+
+        @keyframes marquee_title {
+          0%   { transform: translateX(0); }
+          25%  { transform: translateX(calc(-100% + 216px)); }
+          27%  { transform: translateX(calc(-100% + 216px)); }
+          31%  { transform: translateX(0); }
+          100% { transform: translateX(0); }
+        }
+
+        @keyframes marquee_artist {
+          0%   { transform: translateX(0); }
+          33%  { transform: translateX(0); }
+          58%  { transform: translateX(calc(-100% + 216px)); }
+          60%  { transform: translateX(calc(-100% + 216px)); }
+          64%  { transform: translateX(0); }
+          100% { transform: translateX(0); }
         }
 
         #progress_wrap {
@@ -269,8 +314,10 @@ svg(width = "460" height = "240" fill="none" xmlns = "http://www.w3.org/2000/svg
               div(id="cartridge")
           div(id="tonearm_pivot")
           div(id="info")
-            h2(id="song_name") #{title}
-            h3(id="artist_name") #{artist}
+            div(id="title_wrap" class = "" + title_marquee + "")
+              h2(id="song_name") #{title}
+            div(id="artist_wrap" class = "" + artist_marquee + "")
+              h3(id="artist_name") #{artist}
           div(id="progress_wrap")
             div(id="progress_base")
               div(id="progress_fill" style = "width: " + progress_percentage + "%;")
