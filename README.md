@@ -5,7 +5,7 @@
 
 **Languages**
 
-<img src="https://skillicons.dev/icons?i=python,js,ts,php,bash" alt="Python, JavaScript, TypeScript, PHP, Bash" />&nbsp;<img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" height="48" alt="SQL" />
+<img src="https://skillicons.dev/icons?i=python,js,ts,php,bash" alt="Python, JavaScript, TypeScript, PHP, Bash" />&nbsp;<img src="https://img.shields.io/badge/SQL-4479A1?style=plastic&logo=mysql&logoColor=white" height="48" alt="SQL" />
 
 **Frontend**
 
@@ -13,15 +13,15 @@
 
 **Databases**
 
-<img src="https://skillicons.dev/icons?i=mysql,postgres,redis" alt="MySQL, PostgreSQL, Redis" />&nbsp;<img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" height="48" alt="Neo4j" />
+<img src="https://skillicons.dev/icons?i=mysql,postgres,redis" alt="MySQL, PostgreSQL, Redis" />&nbsp;<img src="https://img.shields.io/badge/Neo4j-008CC1?style=plastic&logo=neo4j&logoColor=white" height="48" alt="Neo4j" />
 
 **DevOps**
 
-<img src="https://skillicons.dev/icons?i=docker,githubactions,aws,cloudflare,nginx" alt="Docker, GitHub Actions, AWS, Cloudflare, Nginx" />&nbsp;<img src="https://img.shields.io/badge/Coolify-8E3FFF?style=for-the-badge&logo=coolify&logoColor=white" height="48" alt="Coolify" />
+<img src="https://skillicons.dev/icons?i=docker,githubactions,aws,cloudflare,nginx" alt="Docker, GitHub Actions, AWS, Cloudflare, Nginx" />&nbsp;<img src="https://img.shields.io/badge/Coolify-8E3FFF?style=plastic&logo=coolify&logoColor=white" height="48" alt="Coolify" />
 
 **Work environment**
 
-<img src="https://skillicons.dev/icons?i=neovim,git" alt="Neovim, Git" />&nbsp;<img src="https://img.shields.io/badge/Ghostty-1C1B1F?style=for-the-badge&logo=ghostty&logoColor=white" height="48" alt="Ghostty" />&nbsp;<img src="https://img.shields.io/badge/Codex-000000?style=for-the-badge&logo=openai&logoColor=white" height="48" alt="Codex" />&nbsp;<img src="https://img.shields.io/badge/Claude%20Code-D97706?style=for-the-badge&logo=anthropic&logoColor=white" height="48" alt="Claude Code" />
+<img src="https://skillicons.dev/icons?i=neovim,git" alt="Neovim, Git" />&nbsp;<img src="https://img.shields.io/badge/Ghostty-1C1B1F?style=plastic&logo=ghostty&logoColor=white" height="48" alt="Ghostty" />&nbsp;<img src="https://img.shields.io/badge/Codex-000000?style=plastic&logo=openai&logoColor=white" height="48" alt="Codex" />&nbsp;<img src="https://img.shields.io/badge/Claude%20Code-D97706?style=plastic&logo=anthropic&logoColor=white" height="48" alt="Claude Code" />
 
 ## 📅 Hobbies
 - Solve programming problems at Codeforces, UVa, LeetCode
