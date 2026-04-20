@@ -9,7 +9,7 @@
 
 **Frontend**
 
-<img src="https://skillicons.dev/icons?i=html,css,tailwind,react" alt="HTML, CSS, Tailwind, React" />
+<img src="https://skillicons.dev/icons?i=html,css,tailwind,react,nextjs" alt="HTML, CSS, Tailwind, React, Next.js" />
 
 **Databases**
 
