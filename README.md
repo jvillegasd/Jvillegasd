@@ -4,8 +4,9 @@
 ## 🛠️ Tech stack
 
 <p>
-  <img src="https://skillicons.dev/icons?i=python,js,ts,php,react,mysql,postgres,redis,neo4j,docker,githubactions" alt="Tech stack icons" />
+  <img src="https://skillicons.dev/icons?i=python,js,ts,php,react,mysql,postgres,redis,docker,githubactions" alt="Tech stack icons" />
   &nbsp;
+  <img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" height="48" alt="Neo4j" />
   <img src="https://img.shields.io/badge/Coolify-8E3FFF?style=for-the-badge&logo=coolify&logoColor=white" height="48" alt="Coolify" />
 </p>
 
