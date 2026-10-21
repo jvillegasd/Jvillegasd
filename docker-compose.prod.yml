@@ -12,7 +12,7 @@ services:
       - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID}
       - SPOTIFY_REFRESH_TOKEN=${SPOTIFY_REFRESH_TOKEN}
     healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/up"]
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/up').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
       interval: 30s
       timeout: 3s
       retries: 3
